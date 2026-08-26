@@ -5,11 +5,11 @@ import java.math.BigDecimal;
 public class ActaNotas {
     private int idActa;
     private int idMatricula;
-    private String nombreEstudiante; // para JOIN
-    private String nombreCurso;      // para JOIN
-    private Integer notaFinal;       // 0 - 20 (escala vigesimal peruana)
+    private String nombreEstudiante; 
+    private String nombreCurso; 
+    private Integer notaFinal; 
     private BigDecimal porcentajeAsistencia;
-    private String estadoFinal;      // calculado por el TRIGGER (Aprobado/Desaprobado/Inhabilitado)
+    private String estadoFinal;
     private boolean estaCerrada;
 
     public ActaNotas() {}
