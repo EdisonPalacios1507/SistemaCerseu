@@ -3,10 +3,6 @@ package com.cerseu.app.vista;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Ventana principal del Sistema CERSEU - Arguedas.
- * Organiza cada módulo de la base de datos en una pestaña independiente.
- */
 public class MainFrame extends JFrame {
 
     private final PanelEstudiantes panelEstudiantes = new PanelEstudiantes();
@@ -63,10 +59,6 @@ public class MainFrame extends JFrame {
         tabs.addTab("Actas de Notas", panelActaNotas);
         tabs.addTab("Pagos", panelPagos);
 
-        // Cada vez que se cambia de pestaña, se vuelve a consultar la base de
-        // datos para ese módulo. Así, si en "Cursos" agregas un curso nuevo y
-        // luego entras a "Matrícula", el combo ya aparece actualizado sin
-        // necesidad de reiniciar la aplicación.
         tabs.addChangeListener(ev -> {
             Component seleccionado = tabs.getSelectedComponent();
             if (seleccionado == panelEstudiantes) panelEstudiantes.refrescarDatos();
