@@ -5,10 +5,10 @@ import java.time.LocalDate;
 public class Asistencia {
     private int idAsistencia;
     private int idMatricula;
-    private String nombreEstudiante; // para JOIN
-    private String nombreCurso;      // para JOIN
+    private String nombreEstudiante; 
+    private String nombreCurso; 
     private LocalDate fechaSesion;
-    private String estadoAsistencia; // Presente, Ausente, Tardanza...
+    private String estadoAsistencia;
 
     public Asistencia() {}
 
