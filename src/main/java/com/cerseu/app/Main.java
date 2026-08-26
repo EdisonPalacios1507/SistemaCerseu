@@ -8,8 +8,7 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
-        // Look & Feel Nimbus: viene incluido en el JDK, no requiere ninguna
-        // librería externa (a diferencia de FlatLaf).
+
         try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -18,7 +17,7 @@ public class Main {
                 }
             }
         } catch (Exception ex) {
-            // Si Nimbus no está disponible por algún motivo, se usa el Look & Feel por defecto
+            
             ex.printStackTrace();
         }
 
