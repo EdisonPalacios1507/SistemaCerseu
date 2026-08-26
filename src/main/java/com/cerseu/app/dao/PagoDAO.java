@@ -9,7 +9,6 @@ import java.util.List;
 
 public class PagoDAO {
 
-    /** codigo_moneda siempre se envía como 'PEN' (única moneda permitida por el CHECK de la tabla). */
     public void registrar(Pago p) throws SQLException {
         String sql = "INSERT INTO Pago (id_matricula, nombre_banco, monto_pagado, fecha_pago, "
                 + "archivo_voucher, codigo_recibo, verificacion_veracidad, codigo_moneda, estado_pago) "
@@ -27,7 +26,6 @@ public class PagoDAO {
         }
     }
 
-    /** Marca un pago como verificado (rol administrativo) y actualiza su estado. */
     public void verificarPago(int idPago, String nuevoEstado) throws SQLException {
         String sql = "UPDATE Pago SET verificacion_veracidad = TRUE, estado_pago = ? WHERE id_pago = ?";
         try (PreparedStatement ps = ConexionBD.obtenerConexion().prepareStatement(sql)) {
