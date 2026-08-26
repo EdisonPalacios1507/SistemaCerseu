@@ -6,15 +6,15 @@ import java.time.LocalDate;
 public class Pago {
     private int idPago;
     private int idMatricula;
-    private String nombreEstudiante; // para JOIN
-    private String nombreCurso;      // para JOIN
+    private String nombreEstudiante;
+    private String nombreCurso; 
     private String nombreBanco;
     private BigDecimal montoPagado;
     private LocalDate fechaPago;
     private String archivoVoucher;
     private String codigoRecibo;
     private boolean verificacionVeracidad;
-    private String codigoMoneda; // siempre 'PEN'
+    private String codigoMoneda; 
     private String estadoPago;
 
     public Pago() {}
