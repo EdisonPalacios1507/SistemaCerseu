@@ -3,9 +3,9 @@ package com.cerseu.app.modelo;
 public class Matricula {
     private int idMatricula;
     private int idEstudiante;
-    private String nombreEstudiante; // para JOIN
+    private String nombreEstudiante; 
     private int idCurso;
-    private String nombreCurso;      // para JOIN
+    private String nombreCurso; 
     private String periodoAcademico;
     private String estadoMatricula;
 
