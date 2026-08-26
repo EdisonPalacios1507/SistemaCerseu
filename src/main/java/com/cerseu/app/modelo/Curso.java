@@ -8,11 +8,11 @@ public class Curso {
     private String archivoSilabo;
     private int capacidadMaxima;
     private BigDecimal costoBase;
-    private String estadoCurso; // Habilitado, Pendiente, Cerrado, etc.
+    private String estadoCurso; 
     private int idOds;
-    private String nombreOds;       // solo para mostrar en tablas (JOIN)
-    private Integer idDocente;      // puede ser null
-    private String nombreDocente;   // solo para mostrar en tablas (JOIN)
+    private String nombreOds; 
+    private Integer idDocente;
+    private String nombreDocente; 
 
     public Curso() {}
 
