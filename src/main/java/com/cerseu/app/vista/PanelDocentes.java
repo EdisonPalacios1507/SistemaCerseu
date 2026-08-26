@@ -56,7 +56,6 @@ public class PanelDocentes extends JPanel {
         cargarTabla();
     }
 
-    /** Vuelve a leer la tabla desde la base de datos. Se llama al entrar a esta pestaña. */
     public void refrescarDatos() {
         cargarTabla();
     }
