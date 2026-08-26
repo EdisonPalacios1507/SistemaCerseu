@@ -92,7 +92,6 @@ public class PanelCursos extends JPanel {
         return fila + 1;
     }
 
-    /** Vuelve a leer combos y tabla desde la base de datos. Se llama al entrar a esta pestaña. */
     public void refrescarDatos() {
         cargarCombos();
         cargarTabla();
@@ -104,7 +103,7 @@ public class PanelCursos extends JPanel {
             for (Ods o : odsDAO.listarTodos()) comboOds.addItem(o);
 
             comboDocente.removeAllItems();
-            comboDocente.addItem(null); // permite dejar el curso sin docente asignado
+            comboDocente.addItem(null);
             for (Docente d : docenteDAO.listarTodos()) comboDocente.addItem(d);
         } catch (SQLException e) {
             mostrarError(e);
@@ -133,7 +132,6 @@ public class PanelCursos extends JPanel {
         txtCapacidad.setText(modeloTabla.getValueAt(fila, 2).toString());
         txtCosto.setText(modeloTabla.getValueAt(fila, 3).toString());
         comboEstado.setSelectedItem(modeloTabla.getValueAt(fila, 4));
-        // El sílabo no viaja en la tabla resumen; se deja en blanco al seleccionar
         txtSilabo.setText("");
         seleccionarEnCombo(comboOds, (String) modeloTabla.getValueAt(fila, 5));
         String nombreDocente = (String) modeloTabla.getValueAt(fila, 6);
