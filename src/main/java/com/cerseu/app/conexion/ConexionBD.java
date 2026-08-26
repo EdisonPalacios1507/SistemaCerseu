@@ -4,17 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Clase de acceso a la conexión JDBC con la base de datos MySQL "arguedas_cerseu".
- *
- * Se recomienda usar el usuario de aplicación creado en el script SQL
- * (app_arguedas) en lugar del usuario administrador, ya que solo tiene
- * permisos de SELECT/INSERT/UPDATE/DELETE/EXECUTE, siguiendo el principio
- * de menor privilegio definido en el propio script de la base de datos.
- */
 public class ConexionBD {
 
-    // ---- Ajusta estos datos según tu entorno local de MySQL ----
     private static final String HOST = "localhost";
     private static final String PUERTO = "3306";
     private static final String BASE_DATOS = "arguedas_cerseu";
@@ -28,13 +19,9 @@ public class ConexionBD {
     private static Connection conexion;
 
     private ConexionBD() {
-        // Clase utilitaria: no se instancia
+        
     }
 
-    /**
-     * Devuelve una conexión activa (patrón singleton). Si la conexión se
-     * cerró o nunca se abrió, crea una nueva.
-     */
     public static Connection obtenerConexion() throws SQLException {
         if (conexion == null || conexion.isClosed()) {
             try {
@@ -48,7 +35,7 @@ public class ConexionBD {
         return conexion;
     }
 
-    /** Cierra la conexión activa, si existe. */
+
     public static void cerrarConexion() {
         try {
             if (conexion != null && !conexion.isClosed()) {
@@ -59,7 +46,7 @@ public class ConexionBD {
         }
     }
 
-    /** Prueba rápida de conectividad, usada al iniciar la aplicación. */
+
     public static boolean probarConexion() {
         try {
             return obtenerConexion() != null;
