@@ -27,10 +27,6 @@ public class AsistenciaDAO {
         }
     }
 
-    /**
-     * Calcula el porcentaje de asistencia (sesiones "Presente" / total de sesiones)
-     * de una matrícula, útil para llenar automáticamente el Acta de Notas.
-     */
     public double calcularPorcentajeAsistencia(int idMatricula) throws SQLException {
         String sql = "SELECT "
                 + "SUM(CASE WHEN estado_asistencia = 'Presente' THEN 1 ELSE 0 END) AS presentes, "
