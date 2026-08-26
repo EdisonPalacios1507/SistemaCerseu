@@ -1,4 +1,4 @@
-# Sistema CERSEU Arguedas - Gestión Académica
+# Sistema A.R.G.U.E.D.A.S. para el CERSEU de la FLCH - Gestión Académica
 
 Aplicación de escritorio en Java (Swing + FlatLaf) que consume íntegramente la
 base de datos `arguedas_cerseu`: ODS, Docente, Estudiante, Curso, Matrícula,
