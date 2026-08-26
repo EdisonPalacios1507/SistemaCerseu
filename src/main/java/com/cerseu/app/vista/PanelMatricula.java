@@ -86,7 +86,6 @@ public class PanelMatricula extends JPanel {
         cargarTabla();
     }
 
-    /** Vuelve a leer combos y tabla desde la base de datos. Se llama al entrar a esta pestaña. */
     public void refrescarDatos() {
         cargarCombos();
         cargarTabla();
@@ -117,12 +116,6 @@ public class PanelMatricula extends JPanel {
         }
     }
 
-    /**
-     * Llama al procedimiento almacenado sp_matricular_estudiante. Toda la
-     * validación de vacantes y estado del curso (Regla de negocio 4) ocurre
-     * dentro de MySQL; aquí solo se muestra el resultado o el error tal cual
-     * lo señala el SIGNAL SQLSTATE '45000' del procedimiento.
-     */
     private void matricular() {
         Estudiante e = (Estudiante) comboEstudiante.getSelectedItem();
         Curso c = (Curso) comboCurso.getSelectedItem();
@@ -137,8 +130,7 @@ public class PanelMatricula extends JPanel {
             JOptionPane.showMessageDialog(this, "Matrícula registrada correctamente.");
             cargarTabla();
         } catch (SQLException ex) {
-            // Aquí llegan los mensajes definidos con SIGNAL en el procedimiento
-            // (curso no habilitado, capacidad máxima alcanzada, matrícula duplicada, etc.)
+
             JOptionPane.showMessageDialog(this, "No se pudo matricular:\n" + ex.getMessage(),
                     "Regla de negocio", JOptionPane.WARNING_MESSAGE);
         }
