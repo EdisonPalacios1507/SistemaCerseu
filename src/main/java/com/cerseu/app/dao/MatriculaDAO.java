@@ -9,13 +9,6 @@ import java.util.List;
 
 public class MatriculaDAO {
 
-    /**
-     * Registra una matrícula invocando el procedimiento almacenado
-     * sp_matricular_estudiante, que valida cupos y estado del curso
-     * (Regla de negocio 4) directamente en la base de datos.
-     * Si el procedimiento lanza un SIGNAL (curso lleno o no habilitado),
-     * la SQLException resultante se propaga con el mensaje original.
-     */
     public void matricular(int idEstudiante, int idCurso, String periodo) throws SQLException {
         String sql = "{CALL sp_matricular_estudiante(?, ?, ?)}";
         try (CallableStatement cs = ConexionBD.obtenerConexion().prepareCall(sql)) {
