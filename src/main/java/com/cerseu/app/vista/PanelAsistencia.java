@@ -73,7 +73,6 @@ public class PanelAsistencia extends JPanel {
         cargarTabla();
     }
 
-    /** Vuelve a leer el combo de matrículas y la tabla desde la base de datos. Se llama al entrar a esta pestaña. */
     public void refrescarDatos() {
         cargarCombo();
         cargarTabla();
